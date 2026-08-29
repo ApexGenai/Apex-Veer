@@ -1248,4 +1248,84 @@ document.addEventListener('DOMContentLoaded', () => {
       closeVideoModal();
     }
   });
+
+  // iOS Video Autoplay Fallback for Intro Film Video
+  const introVideo = document.querySelector('.intro-film-video');
+  if (introVideo) {
+    introVideo.muted = true;
+    introVideo.play().catch(() => {
+      const enableAutoplay = () => {
+        introVideo.play().catch(() => {});
+        window.removeEventListener('touchstart', enableAutoplay);
+        window.removeEventListener('click', enableAutoplay);
+      };
+      window.addEventListener('touchstart', enableAutoplay, { once: true });
+      window.addEventListener('click', enableAutoplay, { once: true });
+    });
+  }
 });
+
+/* ================= PORTFOLIO ACTIVE CENTERED CARD CONTROLLER ================= */
+(function() {
+  const track = document.querySelector('.portfolio-scroll-track');
+  if (!track) return;
+
+  function updateActiveCard() {
+    const cards = track.querySelectorAll('.portfolio-card');
+    if (!cards.length) return;
+
+    const trackRect = track.getBoundingClientRect();
+    const trackCenter = trackRect.left + trackRect.width / 2;
+
+    let closestCard = null;
+    let minDistance = Infinity;
+
+    cards.forEach(card => {
+      const cardRect = card.getBoundingClientRect();
+      const cardCenter = cardRect.left + cardRect.width / 2;
+      const distance = Math.abs(trackCenter - cardCenter);
+
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestCard = card;
+      }
+    });
+
+    cards.forEach(card => {
+      if (card === closestCard) {
+        card.classList.add('active');
+      } else {
+        card.classList.remove('active');
+      }
+    });
+  }
+
+  track.addEventListener('scroll', updateActiveCard, { passive: true });
+  window.addEventListener('resize', updateActiveCard, { passive: true });
+  window.addEventListener('load', updateActiveCard);
+  document.addEventListener('DOMContentLoaded', updateActiveCard);
+  setTimeout(updateActiveCard, 100);
+})();
+
+/* ================= 10 WAYS BEND MOBILE TOGGLE ================= */
+function toggleBendItems() {
+  const grid = document.getElementById('bendGrid');
+  const btn = document.getElementById('bendToggleBtn');
+  if (!grid || !btn) return;
+
+  const isCollapsed = grid.classList.contains('collapsed');
+  const span = btn.querySelector('span') || btn;
+
+  if (isCollapsed) {
+    grid.classList.remove('collapsed');
+    span.textContent = 'SHOW LESS';
+  } else {
+    grid.classList.add('collapsed');
+    span.textContent = 'SHOW MORE';
+    const sectionHead = grid.previousElementSibling;
+    if (sectionHead) {
+      sectionHead.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+}
+

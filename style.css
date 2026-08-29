@@ -871,11 +871,32 @@
   .editorial-card p { font-size:13.5px; color:var(--text-muted); line-height:1.6; }
   .editorial-card .card-action { font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase; color:var(--accent); margin-top:20px; display:inline-block; }
 
+  /* Compact Sizing for Service for Scale */
+  #media-expanded .editorial-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:18px; margin-top:48px; }
+  #media-expanded .editorial-card { padding:28px 24px; height:auto; min-height:200px; display:flex; flex-direction:column; justify-content:center; }
+
   /* 5 Columns x 2 Rows Compact Grid for Studio Services */
   .editorial-grid-5col { display:grid !important; grid-template-columns:repeat(5, minmax(0, 1fr)) !important; gap:14px !important; margin-top:48px; }
   .editorial-grid-5col .editorial-card { padding:22px 18px !important; height:auto !important; min-height:180px !important; }
   .editorial-grid-5col .editorial-card h4 { font-size:16.5px !important; margin-bottom:8px !important; line-height:1.25 !important; }
   .editorial-grid-5col .editorial-card p { font-size:12px !important; line-height:1.5 !important; }
+
+  /* 10 Ways Bend Mobile Toggle */
+  .bend-toggle-wrap {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    .bend-toggle-wrap {
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
+    }
+    
+    .editorial-grid-5col.collapsed .editorial-card:nth-child(n+4) {
+      display: none !important;
+    }
+  }
 
   /* Featured Projects Cinematic Cards */
   .featured-project-grid { display:flex; flex-direction:column; gap:64px; margin-top:48px; }
@@ -3433,8 +3454,18 @@ img, video {
   padding-top: 24px;
   margin-top: 40px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 20px;
+}
+
+.contact-phone-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-phone-link:hover {
+  color: var(--accent);
 }
 
 .theme-canvas .contact-metadata-bar {
@@ -3806,19 +3837,23 @@ img, video {
   border-radius: 16px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
   flex: 0 0 auto;
   width: 540px;
   max-width: 85vw;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   display: flex;
   flex-direction: column;
+  transform: scale(0.92);
+  opacity: 0.65;
 }
 
-.portfolio-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 40, 40, 0.4);
+.portfolio-card.active, .portfolio-card:hover {
+  transform: scale(1.05);
+  opacity: 1;
+  border-color: rgba(255, 40, 40, 0.5);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 40, 40, 0.2);
+  z-index: 2;
 }
 
 .thumbnail-wrapper {
@@ -4429,9 +4464,21 @@ img, video {
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 24px;
-  padding-top: 8px;
+  padding-top: 28px;
+  padding-bottom: 36px;
+  padding-left: 120px;
+  padding-right: 120px;
   width: 100%;
+}
+
+@media (max-width: 768px) {
+  .portfolio-scroll-track {
+    padding-top: 20px;
+    padding-bottom: 28px;
+    padding-left: 48px;
+    padding-right: 48px;
+    gap: 20px;
+  }
 }
 
 .portfolio-scroll-track::-webkit-scrollbar {

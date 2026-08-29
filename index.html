@@ -114,7 +114,7 @@
 
 <main>
   <section id="intro-film" class="intro-film-section">
-    <video class="intro-film-video" autoplay muted loop playsinline preload="auto">
+    <video class="intro-film-video" autoplay muted loop playsinline webkit-playsinline preload="auto">
       <source src="assets/video/start page .mp4" type="video/mp4">
     </video>
     <div class="intro-film-overlay"></div>
@@ -122,7 +122,6 @@
       <span class="mono" style="letter-spacing: 0.22em; color: var(--accent-alt); font-size: 11px; margin-bottom: 20px; display: block;">APEX GENAI // CREATIVE EXCELLENCE</span>
       <h1>APEX GENAI MEDIA SOLUTIONS</h1>
       <p style="margin-bottom: 30px;">An AI production Studio</p>
-      <div class="scroll-cue" style="position: static; margin: 0 auto;"><span class="mono" style="font-size: 10px;">Scroll to Enter</span><div class="line" style="margin: 8px auto 0;"></div></div>
     </div>
   </section>
 
@@ -245,7 +244,7 @@
         <h2>10 ways we bend reality.</h2>
         <p>Precision art direction meets next-generation generative pipelines to build cinematic visual products.</p>
       </div>
-      <div class="editorial-grid editorial-grid-5col reveal">
+      <div class="editorial-grid editorial-grid-5col collapsed reveal" id="bendGrid">
         <div class="editorial-card">
           <div>
             <span class="mono" style="font-size:10px; color:var(--text-muted);">01 / Narrative</span>
@@ -317,6 +316,11 @@
           </div>
         </div>
       </div>
+      <div class="bend-toggle-wrap mobile-only-toggle">
+        <button id="bendToggleBtn" class="btn btn-primary magnetic" onclick="toggleBendItems()">
+          <span>SHOW MORE</span>
+        </button>
+      </div>
     </div>
 
     <!-- Production Process -->
@@ -363,7 +367,6 @@
             <h4>Content Strategy</h4>
             <p>Designing unified branding and release calendars to sustain organic channel momentum.</p>
           </div>
-          <span class="card-action">Initialize Strategy →</span>
         </div>
         <div class="editorial-card">
           <div>
@@ -371,7 +374,6 @@
             <h4>Performance Marketing</h4>
             <p>Direct response growth execution focused on driving immediate product sales and subscriptions.</p>
           </div>
-          <span class="card-action">Analyze Models →</span>
         </div>
         <div class="editorial-card">
           <div>
@@ -379,7 +381,6 @@
             <h4>Paid Ads</h4>
             <p>Scaling visual ad creatives across Meta, YouTube, and TikTok channels with continuous A/B testing.</p>
           </div>
-          <span class="card-action">Launch Ads →</span>
         </div>
         <div class="editorial-card">
           <div>
@@ -387,7 +388,6 @@
             <h4>SEO</h4>
             <p>Maximizing search visibility and content rankings with high-quality keywords and semantic indexing.</p>
           </div>
-          <span class="card-action">Check Ranks →</span>
         </div>
         <div class="editorial-card">
           <div>
@@ -395,7 +395,6 @@
             <h4>Brand Positioning</h4>
             <p>Fusing creative art direction with commercial market insights to capture visual mindshare.</p>
           </div>
-          <span class="card-action">Define Identity →</span>
         </div>
         <div class="editorial-card">
           <div>
@@ -403,7 +402,6 @@
             <h4>Content Production</h4>
             <p>Batch producing dynamic creative files and video reels optimized for modern media networks.</p>
           </div>
-          <span class="card-action">Start Render →</span>
         </div>
         <div class="editorial-card">
           <div>
@@ -411,7 +409,6 @@
             <h4>Automation</h4>
             <p>Connecting databases, scheduling workflows, and triggering programmatic content distribution.</p>
           </div>
-          <span class="card-action">Deploy Code →</span>
         </div>
         <div class="editorial-card">
           <div>
@@ -419,7 +416,6 @@
             <h4>Analytics</h4>
             <p>Continuous campaign monitoring, ROI reports, and conversion tracking updates.</p>
           </div>
-          <span class="card-action">Check Report →</span>
         </div>
         <div class="editorial-card">
           <div>
@@ -427,7 +423,6 @@
             <h4>Email Marketing</h4>
             <p>Drafting conversion sequences and brand newsletters to nurture audience lifetime value.</p>
           </div>
-          <span class="card-action">Initiate Flows →</span>
         </div>
       </div>
     </div>
@@ -726,6 +721,10 @@
             <div>
               <p class="meta-label font-mono-custom">TIMELINE</p>
               <p class="meta-value">Typical Production 7–21 Days</p>
+            </div>
+            <div>
+              <p class="meta-label font-mono-custom">DIRECT CONTACT</p>
+              <p class="meta-value"><a href="tel:+918928974873" class="contact-phone-link">+91 89289 74873</a></p>
             </div>
           </div>
         </div>
