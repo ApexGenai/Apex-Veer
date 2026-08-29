@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apex GenAI Media Solutions — AI Film Studio & Brand Media Company</title>
+<meta name="description" content="Apex GenAI Media Solutions fuses AI production and performance marketing into one studio — for brands who refuse to look ordinary.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="no-scroll">
+
+<div id="loader">
+  <div class="loader-text">
+    <div class="line"><span>Enter the world of</span></div>
+    <div class="line"><span>AI Media and Animations</span></div>
+  </div>
+  <div class="loader-meta">
+    <div class="loader-bar"><div class="loader-bar-fill" id="loaderFill"></div></div>
+    <span class="loader-pct" id="loaderPct">00%</span>
+  </div>
+</div>
+
+
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="cursor-core" id="cursorCore"></div>
+
+<header id="siteHeader">
+  <a href="#" class="logo"><img src="assets/images/Apexlogo.jpeg" alt="Apex GenAI Logo" class="site-logo-img" onerror="this.onerror=null; this.src='assests/images/Apexlogo.jpeg';"></a>
+  <nav>
+    <ul class="navlinks">
+      <li><a href="#studios-expanded">Studios</a></li>
+      <li><a href="#media-expanded">Media</a></li>
+      <li><a href="#founders">Founders</a></li>
+      <li style="display:flex; align-items:center;">
+        <button id="themeToggleBtn" class="theme-toggle-btn magnetic" onclick="toggleDisplayMode()" aria-label="Toggle Display Mode">
+          <span class="mode-label active-noir" id="modeNoir">NOIR</span>
+          <span class="mode-slash">/</span>
+          <span class="mode-label" id="modeCanvas">CANVAS</span>
+        </button>
+      </li>
+      <li><a href="#contact" class="btn btn-primary magnetic">Start Project</a></li>
+    </ul>
+  </nav>
+  <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Menu" onclick="toggleMobileMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+</header>
+
+<!-- Desktop Fixed Social Navigation -->
+<nav class="desktop-social-nav" aria-label="Social Media Links">
+  <a href="https://www.linkedin.com/in/ansh-bhanushali-3971ab373?utm_source=share_via&utm_content=profile&utm_medium=member_ios" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="social-nav-link" 
+     aria-label="Visit our LinkedIn profile">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-nav-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+  </a>
+  <a href="https://www.instagram.com/apexxmedia._?utm_source=qr" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="social-nav-link" 
+     aria-label="Visit our Instagram profile">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-nav-icon"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+  </a>
+</nav>
+
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+  <ul class="mobile-menu-links">
+    <li><a href="about.html" onclick="closeMobileMenu()">About Us</a></li>
+    <li><a href="careers.html" onclick="closeMobileMenu()">Careers</a></li>
+    <li><a href="#studios-expanded" onclick="closeMobileMenu()">Studios</a></li>
+    <li><a href="#media-expanded" onclick="closeMobileMenu()">Media</a></li>
+    <li><a href="#founders" onclick="closeMobileMenu()">Founders</a></li>
+    <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
+  </ul>
+  
+  <div class="mobile-theme-row">
+    <span class="theme-label">DISPLAY MODE</span>
+    <button id="mobileThemeToggleBtn" class="theme-toggle-btn magnetic" onclick="toggleDisplayMode()" aria-label="Toggle Display Mode">
+      <span class="mode-label active-noir" id="mobileModeNoir">NOIR</span>
+      <span class="mode-slash">/</span>
+      <span class="mode-label" id="mobileModeCanvas">CANVAS</span>
+    </button>
+  </div>
+  
+  <div class="mobile-menu-bottom">
+    <a href="#contact" class="btn btn-primary mobile-cta-btn" onclick="closeMobileMenu()">Start Project</a>
+    <div class="mobile-social-row" aria-label="Social Media Links">
+      <a href="https://www.linkedin.com/in/ansh-bhanushali-3971ab373?utm_source=share_via&utm_content=profile&utm_medium=member_ios" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="mobile-social-icon-btn" 
+         aria-label="Visit our LinkedIn profile">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-social-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://www.instagram.com/apexxmedia._?utm_source=qr" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="mobile-social-icon-btn" 
+         aria-label="Visit our Instagram profile">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-social-icon"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<main>
+  <section id="intro-film" class="intro-film-section">
+    <video class="intro-film-video" autoplay muted loop playsinline preload="auto">
+      <source src="assets/video/start page .mp4" type="video/mp4">
+    </video>
+    <div class="intro-film-overlay"></div>
+    <div class="intro-film-content reveal">
+      <span class="mono" style="letter-spacing: 0.22em; color: var(--accent-alt); font-size: 11px; margin-bottom: 20px; display: block;">APEX GENAI // CREATIVE EXCELLENCE</span>
+      <h1>APEX GENAI MEDIA SOLUTIONS</h1>
+      <p style="margin-bottom: 30px;">An AI production Studio</p>
+      <div class="scroll-cue" style="position: static; margin: 0 auto;"><span class="mono" style="font-size: 10px;">Scroll to Enter</span><div class="line" style="margin: 8px auto 0;"></div></div>
+    </div>
+  </section>
+
+  
+
+
+
+
+
+
+
+  <section id="studios-expanded" class="opaque section-pad" style="padding-top:0;">
+
+    <!-- HORIZONTAL SCROLL FEATURED PORTFOLIO SECTION WITH YOUTUBE EMBEDS -->
+    <section class="portfolio-section wrap section-pad reveal" id="selected-work" style="border-radius: 20px; margin-top: 40px;">
+      <div class="portfolio-header">
+        <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin-bottom: 24px;">
+          <div>
+            <span class="section-tag mono" style="color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; display: block; margin-bottom: 12px;">• PORTFOLIO</span>
+            <h2 class="section-title massive-heading" style="font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(32px, 5vw, 64px); font-weight: 800; margin-bottom: 12px;">Featured Portfolio.</h2>
+            <p class="section-desc" style="font-size: clamp(15px, 1.6vw, 18px); line-height: 1.6; max-width: 640px;">World-class cinematic outputs designed with strict art direction and outcome-oriented frameworks.</p>
+          </div>
+          <div class="scroll-cue-indicator mono" style="font-size: 11px; letter-spacing: 0.15em; display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+            <span>SCROLL HORIZONTALLY</span>
+            <span style="color: var(--accent); font-size: 16px;">→</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Horizontal Scroll Slider Track -->
+      <div class="portfolio-scroll-track">
+        
+        <!-- Project 01 -->
+        <div class="portfolio-card" onclick="openVideoModal('FKPkvtwIafQ')">
+          <div class="thumbnail-wrapper">
+            <img src="https://img.youtube.com/vi/FKPkvtwIafQ/maxresdefault.jpg" alt="Mirai" class="thumbnail-img" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/FKPkvtwIafQ/hqdefault.jpg';" />
+            <div class="overlay-gradient"></div>
+            
+            <button class="play-btn" aria-label="Play Video">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="card-details">
+            <span class="card-tag">01 // AI FILM & CGI</span>
+            <h3 class="card-title">Mirai</h3>
+            <p class="card-desc">A futuristic cinematic vision generated through advanced AI production pipelines.</p>
+          </div>
+        </div>
+
+        <!-- Project 02 -->
+        <div class="portfolio-card" onclick="openVideoModal('7DxxaBfrLpk')">
+          <div class="thumbnail-wrapper">
+            <img src="https://img.youtube.com/vi/7DxxaBfrLpk/maxresdefault.jpg" alt="The Silver Wolf" class="thumbnail-img" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/7DxxaBfrLpk/hqdefault.jpg';" />
+            <div class="overlay-gradient"></div>
+            
+            <button class="play-btn" aria-label="Play Video">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="card-details">
+            <span class="card-tag">02 // CINEMATIC SHORTS</span>
+            <h3 class="card-title">The Silver Wolf</h3>
+            <p class="card-desc">An epic cinematic saga brought to life with hyper-realistic AI character generation and intense atmospheric visual effects.</p>
+          </div>
+        </div>
+
+        <!-- Project 03 -->
+        <div class="portfolio-card" onclick="openVideoModal('RhomGU7bI_Y')">
+          <div class="thumbnail-wrapper">
+            <img src="https://img.youtube.com/vi/RhomGU7bI_Y/maxresdefault.jpg" alt="The Divine Arrival" class="thumbnail-img" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/RhomGU7bI_Y/hqdefault.jpg';" />
+            <div class="overlay-gradient"></div>
+            
+            <button class="play-btn" aria-label="Play Video">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="card-details">
+            <span class="card-tag">03 // CGI INTEGRATION</span>
+            <h3 class="card-title">The Divine Arrival</h3>
+            <p class="card-desc">A majestic cinematic spectacle depicting celestial entities and transcendent visual storytelling.</p>
+          </div>
+        </div>
+
+        <!-- Project 04 -->
+        <div class="portfolio-card" onclick="openVideoModal('P1FrJPZSXyU')">
+          <div class="thumbnail-wrapper">
+            <img src="https://img.youtube.com/vi/P1FrJPZSXyU/maxresdefault.jpg" alt="Mahabharat" class="thumbnail-img" onerror="this.onerror=null; this.src='https://img.youtube.com/vi/P1FrJPZSXyU/hqdefault.jpg';" />
+            <div class="overlay-gradient"></div>
+            
+            <button class="play-btn" aria-label="Play Video">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="card-details">
+            <span class="card-tag">04 // EPISODIC NARRATIVE</span>
+            <h3 class="card-title">Mahabharat</h3>
+            <p class="card-desc">A grand mythological epic reimagined through next-generation generative AI rendering and cinematic scale.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Services -->
+    <div class="wrap" style="margin-top:40px;">
+      <div class="section-head reveal">
+        <span class="mono">Studio Services</span>
+        <h2>10 ways we bend reality.</h2>
+        <p>Precision art direction meets next-generation generative pipelines to build cinematic visual products.</p>
+      </div>
+      <div class="editorial-grid editorial-grid-5col reveal">
+        <div class="editorial-card">
+          <div>
+            <span class="mono" style="font-size:10px; color:var(--text-muted);">01 / Narrative</span>
+            <h4>AI Films</h4>
+            <p>Narrative sci-fi, drama, and world-building shorts engineered with consistent actors and camera movements.</p>
+          </div>
+        </div>
+        <div class="editorial-card">
+          <div>
+            <span class="mono" style="font-size:10px; color:var(--text-muted);">02 / Direct-to-Consumer</span>
+            <h4>Commercials</h4>
+            <p>High-end corporate campaigns and product spots blending generative imagery with traditional grading.</p>
+          </div>
+        </div>
+        <div class="editorial-card">
+          <div>
+            <span class="mono" style="font-size:10px; color:var(--text-muted);">03 / Music</span>
+            <h4>Music Videos</h4>
+            <p>Surreal, audio-reactive dreamscapes built frame-by-frame to sync with sound designs and pacing.</p>
+          </div>
+        </div>
+        <div class="editorial-card">
+          <div>
+            <span class="mono" style="font-size:10px; color:var(--text-muted);">04 / Style</span>
+            <h4>Fashion Films</h4>
+            <p>Aesthetic, luxury-oriented motion assets featuring unreal fabric simulations, hyper-real models, and set designs.</p>
+          </div>
+        </div>
+        <div class="editorial-card">
+          <div>
+            <span class="mono" style="font-size:10px; color:var(--text-muted);">05 / Branded</span>
+            <h4>Brand Films</h4>
+            <p>Deeper stories focused on brand values, founder backgrounds, or revolutionary technical achievements.</p>
+          </div>
+        </div>
+        <div class="editorial-card">
+          <div>
+            <span class="mono" style="font-size:10px; color:var(--text-muted);">06 / Launch Spec</span>
+            <h4>Product Launches</h4>
+            <p>Dramatic structural reveals and cinematic specs showing off machinery, tech, or luxury goods from impossible angles.</p>
+          </div>
+        </div>
+        <div class="editorial-card">
+          <div>
+            <span class="mono" style="font-size:10px; color:var(--text-muted);">07 / Dark Luxury</span>
+            <h4>Luxury Campaigns</h4>
+            <p>Visual branding and high-end campaigns customized for luxury fashion, hospitality, and watches.</p>
+          </div>
+        </div>
+        <div class="editorial-card">
+          <div>
+            <span class="mono" style="font-size:10px; color:var(--text-muted);">08 / Procedural</span>
+            <h4>Motion Graphics</h4>
+            <p>Procedural text effects, technical HUD displays, and visual elements overlaying generative output.</p>
+          </div>
+        </div>
+        <div class="editorial-card">
+          <div>
+            <span class="mono" style="font-size:10px; color:var(--text-muted);">09 / VFX Integration</span>
+            <h4>CGI Integration</h4>
+            <p>Advanced synthetic assets, 3D character rigging, and lighting layers composited onto AI video clips.</p>
+          </div>
+        </div>
+        <div class="editorial-card">
+          <div>
+            <span class="mono" style="font-size:10px; color:var(--text-muted);">10 / Unreal Stage</span>
+            <h4>Virtual Production</h4>
+            <p>Custom environmental maps and volumetric staging backdrops generated for real-time camera tracking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Production Process -->
+    <div class="wrap section-pad protocol-block" style="margin-top:100px; padding-top:80px; border-top:1px solid var(--border);">
+      <div class="section-head reveal" style="text-align:center; margin:0 auto 64px;">
+        <span class="mono">Protocol</span>
+        <h2>Production Process.</h2>
+        <p style="margin:16px auto 0;">The horizontal workflow tracking our cinematic development cycle. Scroll to watch the pipeline fill.</p>
+      </div>
+      <div class="wrap process-strip reveal">
+        <div class="process-step"><span class="pnum">01 / Init</span><h4>Brief</h4><p>Defining visual goals, scope constraints, and target aesthetics.</p><div class="process-bar"></div></div>
+        <div class="process-step"><span class="pnum">02 / Art</span><h4>Creative Direction</h4><p>Setting mood palettes, environment grids, and structural bounds.</p><div class="process-bar"></div></div>
+        <div class="process-step"><span class="pnum">03 / Layout</span><h4>Storyboarding</h4><p>Mapping camera paths, aspect scales, and key scene transitions.</p><div class="process-bar"></div></div>
+        <div class="process-step"><span class="pnum">04 / Diffusion</span><h4>AI Generation</h4><p>Rendering initial environments and textures on our compute farm.</p><div class="process-bar"></div></div>
+        <div class="process-step"><span class="pnum">05 / Motion</span><h4>Editing</h4><p>Animating vectors, trimming clip artifacts, and timing sequences.</p><div class="process-bar"></div></div>
+        <div class="process-step"><span class="pnum">06 / Color</span><h4>Color Grading</h4><p>Syncing tones and applying custom look-up tables (LUTs).</p><div class="process-bar"></div></div>
+        <div class="process-step"><span class="pnum">07 / Audio</span><h4>Sound Design</h4><p>Fusing sub-bass sweeps, foley audio, and voice syntheses.</p><div class="process-bar"></div></div>
+        <div class="process-step"><span class="pnum">08 / Ship</span><h4>Delivery</h4><p>Upscaling raw output to 4K resolution master files.</p><div class="process-bar"></div></div>
+      </div>
+    </div>
+
+
+  </section>
+
+
+  <!-- ================= SECTION 05: APEX MEDIA ================= -->
+ 
+
+
+
+  <section id="media-expanded" class="opaque alt section-pad" style="padding-top:0;">
+
+    <!-- Media Services -->
+    <div class="wrap section-pad media-stack-block" style="margin-top:40px;">
+      <div class="section-head reveal">
+        <span class="mono">Media Stack</span>
+        <h2>Services for Scale.</h2>
+        <p>A suite of marketing capabilities aligned to maximize campaign returns, generate conversion velocity, and drive search visibility.</p>
+      </div>
+      <div class="editorial-grid reveal">
+        <div class="editorial-card">
+          <div>
+            <span class="mono" style="font-size:10px; color:var(--text-muted);">01 / Planning</span>
+            <h4>Content Strategy</h4>
+            <p>Designing unified branding and release calendars to sustain organic channel momentum.</p>
+          </div>
+          <span class="card-action">Initialize Strategy →</span>
+        </div>
+        <div class="editorial-card">
+          <div>
+            <span class="mono" style="font-size:10px; color:var(--text-muted);">02 / Direct-to-Consumer</span>
+            <h4>Performance Marketing</h4>
+            <p>Direct response growth execution focused on driving immediate product sales and subscriptions.</p>
+          </div>
+          <span class="card-action">Analyze Models →</span>
+        </div>
+        <div class="editorial-card">
+          <div>
+            <span class="mono" style="font-size:10px; color:var(--text-muted);">03 / Ad Ops</span>
+            <h4>Paid Ads</h4>
+            <p>Scaling visual ad creatives across Meta, YouTube, and TikTok channels with continuous A/B testing.</p>
+          </div>
+          <span class="card-action">Launch Ads →</span>
+        </div>
+        <div class="editorial-card">
+          <div>
+            <span class="mono" style="font-size:10px; color:var(--text-muted);">04 / Organic Growth</span>
+            <h4>SEO</h4>
+            <p>Maximizing search visibility and content rankings with high-quality keywords and semantic indexing.</p>
+          </div>
+          <span class="card-action">Check Ranks →</span>
+        </div>
+        <div class="editorial-card">
+          <div>
+            <span class="mono" style="font-size:10px; color:var(--text-muted);">05 / Visual Identity</span>
+            <h4>Brand Positioning</h4>
+            <p>Fusing creative art direction with commercial market insights to capture visual mindshare.</p>
+          </div>
+          <span class="card-action">Define Identity →</span>
+        </div>
+        <div class="editorial-card">
+          <div>
+            <span class="mono" style="font-size:10px; color:var(--text-muted);">06 / Multi-Channel</span>
+            <h4>Content Production</h4>
+            <p>Batch producing dynamic creative files and video reels optimized for modern media networks.</p>
+          </div>
+          <span class="card-action">Start Render →</span>
+        </div>
+        <div class="editorial-card">
+          <div>
+            <span class="mono" style="font-size:10px; color:var(--text-muted);">07 / Efficiency</span>
+            <h4>Automation</h4>
+            <p>Connecting databases, scheduling workflows, and triggering programmatic content distribution.</p>
+          </div>
+          <span class="card-action">Deploy Code →</span>
+        </div>
+        <div class="editorial-card">
+          <div>
+            <span class="mono" style="font-size:10px; color:var(--text-muted);">08 / Telemetry</span>
+            <h4>Analytics</h4>
+            <p>Continuous campaign monitoring, ROI reports, and conversion tracking updates.</p>
+          </div>
+          <span class="card-action">Check Report →</span>
+        </div>
+        <div class="editorial-card">
+          <div>
+            <span class="mono" style="font-size:10px; color:var(--text-muted);">09 / Retention</span>
+            <h4>Email Marketing</h4>
+            <p>Drafting conversion sequences and brand newsletters to nurture audience lifetime value.</p>
+          </div>
+          <span class="card-action">Initiate Flows →</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Growth Framework -->
+    <div class="wrap section-pad execution-framework-block" style="margin-top:100px; padding-top:80px; border-top:1px solid var(--border);">
+      <div class="section-head reveal" style="text-align:center; margin:0 auto 64px;">
+        <span class="mono">Execution Framework</span>
+        <h2>Growth Framework.</h2>
+        <p style="margin:16px auto 0;">Our operational loop continuously optimizes creative assets based on performance signals.</p>
+      </div>
+      <div class="wrap process-strip reveal">
+        <div class="process-step"><span class="pnum">Phase 1</span><h4>Research</h4><p>Mining competitor hooks, search intent, and platform trends.</p><div class="process-bar"></div></div>
+        <div class="process-step"><span class="pnum">Phase 2</span><h4>Strategy</h4><p>Establishing ad concepts and distribution vectors.</p><div class="process-bar"></div></div>
+        <div class="process-step"><span class="pnum">Phase 3</span><h4>Content</h4><p>Generating high-impact video reels and graphics templates.</p><div class="process-bar"></div></div>
+        <div class="process-step"><span class="pnum">Phase 4</span><h4>Launch</h4><p>Publishing programmatic tests across primary social hubs.</p><div class="process-bar"></div></div>
+        <div class="process-step"><span class="pnum">Phase 5</span><h4>Optimize</h4><p>Iterating on winning hooks, adjusting sound cues, and pacing.</p><div class="process-bar"></div></div>
+        <div class="process-step"><span class="pnum">Phase 6</span><h4>Scale</h4><p>Boosting budgets on proven creatives to compound return-on-spend.</p><div class="process-bar"></div></div>
+      </div>
+    </div>
+
+    <!-- Content Lifecycle -->
+    <div class="wrap section-pad content-lifecycle-block" style="margin-top:100px; padding-top:80px; border-top:1px solid var(--border);">
+      <div class="section-head reveal">
+        <span class="mono">Engine</span>
+        <h2>Content Lifecycle.</h2>
+        <p>How we programmatically engineer, deploy and optimize brand assets.</p>
+      </div>
+      
+      <div class="lifecycle-circular-wrapper reveal">
+        <div class="lifecycle-circle">
+          <!-- The 5 Nodes on the circle -->
+          <div class="lifecycle-node active" onclick="setLifecycleStep(0)" style="--node-idx: 0;">
+            <div class="node-dot"></div>
+            <span class="node-label">Ingestion</span>
+          </div>
+          <div class="lifecycle-node" onclick="setLifecycleStep(1)" style="--node-idx: 1;">
+            <div class="node-dot"></div>
+            <span class="node-label">Synthesis</span>
+          </div>
+          <div class="lifecycle-node" onclick="setLifecycleStep(2)" style="--node-idx: 2;">
+            <div class="node-dot"></div>
+            <span class="node-label">Deploy</span>
+          </div>
+          <div class="lifecycle-node" onclick="setLifecycleStep(3)" style="--node-idx: 3;">
+            <div class="node-dot"></div>
+            <span class="node-label">Telemetry</span>
+          </div>
+          <div class="lifecycle-node" onclick="setLifecycleStep(4)" style="--node-idx: 4;">
+            <div class="node-dot"></div>
+            <span class="node-label">Optimize</span>
+          </div>
+          
+          <!-- Central Content Box -->
+          <div class="lifecycle-center">
+            <div class="lifecycle-content-box" id="lifecycleContentBox">
+              <span class="mono center-step-num" id="lcStepNum">STEP 01</span>
+              <h4 id="lcStepTitle">INGESTION & DATA MINING</h4>
+              <p id="lcStepDesc">We automatically query competitor hooks, trending soundscapes, and platform search behaviors. This builds the prompt foundation and design constraints for our creative models.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </section>
+
+
+
+
+
+
+
+
+  <!-- ================= PORTAL 06: TESTIMONIALS & CTA ================= -->
+
+  <section id="testimonials" class="opaque alt section-pad testimonial-section">
+    <div class="wrap">
+      <div class="testimonial-header reveal">
+        <div class="testimonial-title-col">
+          <h2 class="massive-heading" style="margin-bottom: 0;">Trusted by<br>Visionaries.</h2>
+        </div>
+        <div class="testimonial-desc-col">
+          <p class="testimonial-desc" style="color: var(--text-muted);">
+            Partnering with trailblazers to engineer cinematic realities. From AI filmmaking to immersive media production and advertising, we bring bold visions to life.
+          </p>
+        </div>
+      </div>
+
+      <div class="testimonial-grid reveal">
+        <div class="testimonial-image-item">
+          <img src="assets/images/testimonial1.jpeg" alt="Testimonial 1" loading="lazy">
+        </div>
+        <div class="testimonial-image-item">
+          <img src="assets/images/testimonial2.jpeg" alt="Testimonial 2" loading="lazy">
+        </div>
+        <div class="testimonial-image-item">
+          <img src="assets/images/testimonial3.jpeg" alt="Testimonial 3" loading="lazy">
+        </div>
+        <div class="testimonial-image-item">
+          <img src="assets/images/testimonial4.jpeg" alt="Testimonial 4" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="marquee-section" class="opaque alt">
+    <div class="wrap">
+
+      <!-- Creating For Animated Ribbon -->
+      <div class="marquee-section" style="margin-top: 80px; padding: 40px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; position: relative;">
+        <h4 class="mono" style="font-size:11px; color:var(--accent); text-align:center; margin-bottom:32px; letter-spacing:0.2em;">CREATING FOR</h4>
+        
+        <div class="marquee-mask" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+          <div class="marquee-row marquee-row-1">
+            <div class="marquee-content">
+              <span>LUXURY</span><span class="marquee-dot"></span>
+              <span>FASHION</span><span class="marquee-dot"></span>
+              <span>TECHNOLOGY</span><span class="marquee-dot"></span>
+              <span>AUTOMOTIVE</span><span class="marquee-dot"></span>
+              <span>REAL ESTATE</span><span class="marquee-dot"></span>
+              <span>HEALTHCARE</span><span class="marquee-dot"></span>
+              <span>STARTUPS</span><span class="marquee-dot"></span>
+              <span>HOSPITALITY</span><span class="marquee-dot"></span>
+              <span>FINANCE</span><span class="marquee-dot"></span>
+              <span>SPORTS</span><span class="marquee-dot"></span>
+              <span>ENTERTAINMENT</span><span class="marquee-dot"></span>
+              <span>EDUCATION</span><span class="marquee-dot"></span>
+              <span>ECOMMERCE</span><span class="marquee-dot"></span>
+            </div>
+            <!-- Duplicate for infinite loop -->
+            <div class="marquee-content">
+              <span>LUXURY</span><span class="marquee-dot"></span>
+              <span>FASHION</span><span class="marquee-dot"></span>
+              <span>TECHNOLOGY</span><span class="marquee-dot"></span>
+              <span>AUTOMOTIVE</span><span class="marquee-dot"></span>
+              <span>REAL ESTATE</span><span class="marquee-dot"></span>
+              <span>HEALTHCARE</span><span class="marquee-dot"></span>
+              <span>STARTUPS</span><span class="marquee-dot"></span>
+              <span>HOSPITALITY</span><span class="marquee-dot"></span>
+              <span>FINANCE</span><span class="marquee-dot"></span>
+              <span>SPORTS</span><span class="marquee-dot"></span>
+              <span>ENTERTAINMENT</span><span class="marquee-dot"></span>
+              <span>EDUCATION</span><span class="marquee-dot"></span>
+              <span>ECOMMERCE</span><span class="marquee-dot"></span>
+            </div>
+          </div>
+          
+          <div class="marquee-row marquee-row-2">
+            <div class="marquee-content">
+              <span>AI FILMS</span><span class="marquee-dot"></span>
+              <span>COMMERCIALS</span><span class="marquee-dot"></span>
+              <span>MUSIC VIDEOS</span><span class="marquee-dot"></span>
+              <span>CGI</span><span class="marquee-dot"></span>
+              <span>PRODUCT LAUNCHES</span><span class="marquee-dot"></span>
+              <span>BRAND CAMPAIGNS</span><span class="marquee-dot"></span>
+              <span>DOCUMENTARIES</span><span class="marquee-dot"></span>
+              <span>AI PHOTOGRAPHY</span><span class="marquee-dot"></span>
+              <span>VIRTUAL PRODUCTION</span><span class="marquee-dot"></span>
+              <span>SOCIAL CAMPAIGNS</span><span class="marquee-dot"></span>
+              <span>CONTENT SYSTEMS</span><span class="marquee-dot"></span>
+            </div>
+            <!-- Duplicate for infinite loop -->
+            <div class="marquee-content">
+              <span>AI FILMS</span><span class="marquee-dot"></span>
+              <span>COMMERCIALS</span><span class="marquee-dot"></span>
+              <span>MUSIC VIDEOS</span><span class="marquee-dot"></span>
+              <span>CGI</span><span class="marquee-dot"></span>
+              <span>PRODUCT LAUNCHES</span><span class="marquee-dot"></span>
+              <span>BRAND CAMPAIGNS</span><span class="marquee-dot"></span>
+              <span>DOCUMENTARIES</span><span class="marquee-dot"></span>
+              <span>AI PHOTOGRAPHY</span><span class="marquee-dot"></span>
+              <span>VIRTUAL PRODUCTION</span><span class="marquee-dot"></span>
+              <span>SOCIAL CAMPAIGNS</span><span class="marquee-dot"></span>
+              <span>CONTENT SYSTEMS</span><span class="marquee-dot"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PORTAL 07: FOUNDERS' NOTE ================= -->
+  <section id="founders" class="opaque alt section-pad founders-showcase" style="border-top:1px solid var(--border); overflow: hidden;">
+    <div class="wrap" style="max-width: 1100px; margin: 0 auto;">
+      <div class="section-head reveal" style="margin-bottom: 60px;">
+        <span class="mono accent-text" style="display:block; letter-spacing:0.2em; text-transform:uppercase; font-size:12px; color:var(--accent); margin-bottom:16px;">Architects of the Future</span>
+        <h2 class="massive-heading">THE VISIONARIES</h2>
+      </div>
+
+      <div class="founders-container">
+        <!-- Founder Section: Ansh Bhanushali (Mobile: Image Top, Content Below | Desktop: Content Left, Image Right) -->
+        <section class="founder-row founder-row-ansh reveal">
+          <div class="image-wrapper animated-founder-img">
+            <img src="assets/images/Ansh.jpeg" alt="Ansh Bhanushali" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="founder-hero-portrait" data-initials="AB" style="display:none; width:100%; height:100%; align-items:center; justify-content:center;"></div>
+            <div class="image-tag">
+              <span class="name">Ansh Bhanushali</span>
+              <span class="role">FOUNDER</span>
+            </div>
+          </div>
+          <div class="text-content">
+            <div class="kicker">— THE FOUNDERS</div>
+            <h2 class="headline">Crafting the next frame of AI media.</h2>
+            <p class="narrative">"Imagination is the only place where the future already exists. Our job is simply to bring it into reality."</p>
+            <div class="metadata">
+              <div class="name-title">ANSH BHANUSHALI — FOUNDER & CEO</div>
+              <div class="tags">AI Media · Creative Direction · Strategy</div>
+            </div>
+            <div class="signature">AI media, made human.</div>
+          </div>
+        </section>
+
+        <!-- Co-Founder Section: Veer Bhanushali (Mobile: Image Top, Content Below | Desktop: Image Left, Content Right) -->
+        <section class="founder-row reveal">
+          <div class="image-wrapper animated-founder-img">
+            <img src="assets/images/Veer.jpeg" alt="Veer Bhanushali" onerror="this.onerror=null; this.src='assets/images/veer.jpeg';">
+            <div class="image-tag">
+              <span class="name">Veer Bhanushali</span>
+              <span class="role">CO-FOUNDER</span>
+            </div>
+          </div>
+          <div class="text-content">
+            <div class="kicker">— CO-FOUNDER'S NOTE</div>
+            <h2 class="headline">The future of media is experienced, shaped, and shared.</h2>
+            <p class="narrative">"Technology is the canvas. Imagination is the masterpiece."</p>
+            <div class="metadata">
+              <div class="name-title">VEER BHANUSHALI — CO-FOUNDER & CTO</div>
+              <div class="tags">AI Technology · Systems · Innovation</div>
+            </div>
+            <div class="signature">— Veer</div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ================= PORTAL 09: START A PROJECT ================= -->
+  <section id="contact" class="opaque alt section-pad reveal">
+    <div class="contact-section-wrap">
+      <div class="contact-grid">
+        <!-- Info Column -->
+        <div class="contact-info">
+          <div>
+            <!-- Eyebrow Tag -->
+            <div class="font-mono-custom protocol-tag">
+              PRODUCTION PROTOCOL // READY
+            </div>
+
+            <!-- Main Headline -->
+            <h1 class="font-italiana contact-headline">
+              Have a film in your head?<br />
+              Let’s 
+              <span class="word-overlay-container">
+                <!-- Overlay Word: Generate -->
+                <span class="font-mono-custom word-generate-overlay word-generate">
+                  Generate
+                </span>
+                <!-- Original Word: shoot -->
+                <span class="word-shoot-base word-shoot">
+                  shoot
+                </span>
+              </span> 
+              it.
+            </h1>
+
+            <!-- Subheading & Body -->
+            <div class="contact-body-block">
+              <h2 class="contact-subheading">
+                Enter our AI production pipeline.
+              </h2>
+              <p class="contact-description">
+                Share your vision, references, goals, or even a rough idea. Our directors, artists, and AI systems transform imagination into cinematic reality—from the first prompt to the final frame.
+              </p>
+              <p class="contact-highlight-note">
+                This isn't another agency call.
+              </p>
+            </div>
+          </div>
+
+          <!-- Metadata Bottom Bar -->
+          <div class="contact-metadata-bar">
+            <div>
+              <p class="meta-label font-mono-custom">FORMAT</p>
+              <p class="meta-value">30 Minute Discovery Call</p>
+            </div>
+            <div>
+              <p class="meta-label font-mono-custom">LOCATION</p>
+              <p class="meta-value">Worldwide Collaboration</p>
+            </div>
+            <div>
+              <p class="meta-label font-mono-custom">TIMELINE</p>
+              <p class="meta-value">Typical Production 7–21 Days</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Column with Calendly -->
+        <div class="contact-form-container">
+          <!-- Calendly inline widget begin -->
+          <div class="calendly-inline-widget" data-url="https://calendly.com/ansh-apexgenai/new-meeting?hide_event_type_details=1&hide_gdpr_banner=1&background_color=1a1a1a&text_color=f10a0a&primary_color=ff0000" style="min-width:320px;height:700px;"></div>
+          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          <!-- Calendly inline widget end -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Case Study Popup Modal -->
+  <div class="cs-modal" id="caseStudyModal">
+    <div class="cs-modal-content">
+      <button class="cs-modal-close" onclick="closeCaseStudy()">&times; CLOSE</button>
+      <div class="cs-modal-hero" id="modalHeroContainer">
+        <img id="modalHeroImg" src="" alt="Case Study Hero" style="width:100%; height:100%; object-fit:cover;">
+        <video id="modalHeroVideo" autoplay loop muted playsinline style="display:none; width:100%; height:100%; object-fit:cover;"></video>
+        <div class="cs-modal-hero-text">
+          <span class="mono" id="modalCategory" style="color:var(--accent-alt); font-size:12px; margin-bottom:12px; display:block;">Category</span>
+          <h2 id="modalTitle" style="font-size:clamp(26px,4vw,48px);">Project Title</h2>
+        </div>
+      </div>
+      <div class="cs-modal-body">
+        <div class="cs-modal-meta-grid">
+          <div>
+            <span class="cs-modal-meta-label">Duration</span>
+            <span class="cs-modal-meta-val" id="modalDuration">02:40</span>
+          </div>
+          <div>
+            <span class="cs-modal-meta-label">Main Outcome</span>
+            <span class="cs-modal-meta-val" id="modalMetric" style="color:#22c55e;">+38% CTR</span>
+          </div>
+          <div>
+            <span class="cs-modal-meta-label">Segment</span>
+            <span class="cs-modal-meta-val" id="modalClient">Enterprise</span>
+          </div>
+          <div>
+            <span class="cs-modal-meta-label">Status</span>
+            <span class="cs-modal-meta-val" style="color:#22c55e;">ONLINE</span>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div>
+            <h4 class="mono" style="color:var(--accent); font-size:11px; margin-bottom:12px;">01 / The Challenge</h4>
+            <p style="color:var(--text-muted); font-size:14.5px; line-height:1.75; margin-bottom:24px;" id="modalChallenge">How to scale campaign assets for high-end luxury products without spending millions on location shoots, while maintaining artistic coherence and cinematic pacing.</p>
+          </div>
+          <div>
+            <h4 class="mono" style="color:var(--accent); font-size:11px; margin-bottom:12px;">02 / The Solution & Results</h4>
+            <p style="color:var(--text-muted); font-size:14.5px; line-height:1.75;" id="modalResults">We custom-trained localized visual LoRAs and ran temporal animation vectors on our GPU farm. By deploying hundreds of structured variations programmatically, we achieved unprecedented click-through rates.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<footer class="footer-section">
+  <!-- Background Glow Watermark (Positioned behind content) -->
+  <h1 class="footer-watermark apex-watermark">APEX GENAI</h1>
+
+  <div class="footer-container">
+    
+    <!-- Top Row: Brand Info + Links Grid -->
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="#" class="logo"><img src="assets/images/Apexlogo.jpeg" alt="Apex GenAI Logo" class="footer-logo site-logo-img" onerror="this.onerror=null; this.src='assests/images/Apexlogo.jpeg';" /></a>
+        <p class="footer-tagline">
+          Cinematic AI production and performance marketing, under one studio.
+        </p>
+      </div>
+
+      <!-- Aligned Navigation Columns -->
+      <div class="footer-nav-grid">
+        <div class="footer-col">
+          <h4>COMPANY</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>SERVICES</h4>
+          <ul>
+            <li><a href="#studios-expanded">Apex Studios</a></li>
+            <li><a href="#media-expanded">Apex Media</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>RESOURCES</h4>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Row: Copyright -->
+    <div class="footer-bottom">
+      <p>© 2026 Apex GenAI Media Solutions. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
+<!-- Modal Container (Place before </body>) -->
+<div id="videoModal" class="video-modal" onclick="closeVideoModal(event)" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Video Player Modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeVideoModal()" aria-label="Close Video Modal">&times;</button>
+    <div class="iframe-container" id="videoPlayerFrame">
+      <iframe id="modalIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen title="YouTube Video Player"></iframe>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

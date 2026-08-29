@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers — Apex GenAI Media Solutions</title>
+<meta name="description" content="Explore future opportunities at Apex GenAI Media Solutions. We're building the future of AI-powered creativity and laying the foundation for visionary talent.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<!-- Calendly link widget begin -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+<!-- Calendly link widget end -->
+</head>
+<body>
+
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="cursor-core" id="cursorCore"></div>
+
+<header id="siteHeader">
+  <a href="index.html" class="logo"><img src="assets/images/Apexlogo.jpeg" alt="Apex GenAI Logo" class="site-logo-img" onerror="this.onerror=null; this.src='assests/images/Apexlogo.jpeg';"></a>
+  <nav>
+    <ul class="navlinks">
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="index.html#studios-expanded">Studios</a></li>
+      <li><a href="index.html#media-expanded">Media</a></li>
+      <li><a href="index.html#founders">Founders</a></li>
+      <li style="display:flex; align-items:center;">
+        <button id="themeToggleBtn" class="theme-toggle-btn magnetic" onclick="toggleDisplayMode()" aria-label="Toggle Display Mode">
+          <span class="mode-label active-noir" id="modeNoir">NOIR</span>
+          <span class="mode-slash">/</span>
+          <span class="mode-label" id="modeCanvas">CANVAS</span>
+        </button>
+      </li>
+      <li><a href="index.html#contact" class="btn btn-primary magnetic">Start Project</a></li>
+    </ul>
+  </nav>
+  <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Menu" onclick="toggleMobileMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+</header>
+
+<!-- Desktop Fixed Social Navigation -->
+<nav class="desktop-social-nav" aria-label="Social Media Links">
+  <a href="https://www.linkedin.com/in/ansh-bhanushali-3971ab373?utm_source=share_via&utm_content=profile&utm_medium=member_ios" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="social-nav-link" 
+     aria-label="Visit our LinkedIn profile">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-nav-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+  </a>
+  <a href="https://www.instagram.com/apexxmedia._?utm_source=qr" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="social-nav-link" 
+     aria-label="Visit our Instagram profile">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-nav-icon"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+  </a>
+</nav>
+
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+  <ul class="mobile-menu-links">
+    <li><a href="about.html" onclick="closeMobileMenu()">About Us</a></li>
+    <li><a href="careers.html" onclick="closeMobileMenu()">Careers</a></li>
+    <li><a href="index.html#studios-expanded" onclick="closeMobileMenu()">Studios</a></li>
+    <li><a href="index.html#media-expanded" onclick="closeMobileMenu()">Media</a></li>
+    <li><a href="index.html#founders" onclick="closeMobileMenu()">Founders</a></li>
+    <li><a href="index.html#contact" onclick="closeMobileMenu()">Contact</a></li>
+  </ul>
+  
+  <div class="mobile-theme-row">
+    <span class="theme-label">DISPLAY MODE</span>
+    <button id="mobileThemeToggleBtn" class="theme-toggle-btn magnetic" onclick="toggleDisplayMode()" aria-label="Toggle Display Mode">
+      <span class="mode-label active-noir" id="mobileModeNoir">NOIR</span>
+      <span class="mode-slash">/</span>
+      <span class="mode-label" id="mobileModeCanvas">CANVAS</span>
+    </button>
+  </div>
+  
+  <div class="mobile-menu-bottom">
+    <a href="index.html#contact" class="btn btn-primary mobile-cta-btn" onclick="closeMobileMenu()">Start Project</a>
+    <div class="mobile-social-row" aria-label="Social Media Links">
+      <a href="https://www.linkedin.com/in/ansh-bhanushali-3971ab373?utm_source=share_via&utm_content=profile&utm_medium=member_ios" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="mobile-social-icon-btn" 
+         aria-label="Visit our LinkedIn profile">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-social-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://www.instagram.com/apexxmedia._?utm_source=qr" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="mobile-social-icon-btn" 
+         aria-label="Visit our Instagram profile">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-social-icon"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<main class="careers-page-wrapper">
+  <!-- 1. Hero Section -->
+  <section class="careers-hero-section section-pad wrap">
+    <div class="careers-hero-content reveal in">
+      <span class="mono careers-tag">FUTURE OF CREATIVITY</span>
+      <h1 class="careers-hero-title">
+        Careers at Apex
+      </h1>
+      <p class="careers-hero-lead">
+        We're building the future of AI-powered creativity. While we're not actively hiring today, we're laying the foundation for a team of innovators, creators, engineers, and visionaries who will help shape tomorrow.
+      </p>
+      <div class="careers-hero-actions">
+        <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/d/dz55-h6t-h4p'});return false;" class="btn btn-primary magnetic">Join Our Talent Network</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Vision Section: We're Building More Than a Team -->
+  <section class="section-pad wrap" style="padding-top: 20px;">
+    <div class="vision-banner-card reveal in">
+      <div class="vision-glow"></div>
+      <div class="vision-content">
+        <span class="mono vision-tag">OUR PHILOSOPHY</span>
+        <h2 class="vision-title">We're Building More Than a Team</h2>
+        <p class="vision-text">
+          At Apex, we believe great companies are built by people who dare to imagine beyond limits. As we grow, we'll be looking for creative minds, exceptional engineers, visionary designers, and ambitious builders who want to redefine what's possible with AI and creativity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Who We Are Looking For Section -->
+  <section class="section-pad wrap">
+    <div class="section-head reveal in" style="text-align:center; margin:0 auto 48px;">
+      <span class="mono">CULTURE &amp; TALENT</span>
+      <h2>Who We Are Looking For.</h2>
+      <p style="margin: 12px auto 0; max-width: 640px;">We seek extraordinary individuals who thrive at the intersection of intelligence and artistry.</p>
+    </div>
+
+    <div class="qualities-grid reveal in">
+      <div class="quality-card">
+        <div class="quality-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8"/><path d="m4.93 10.93 4.24 4.24"/><path d="M2 18h8"/><path d="M20 18h2"/><path d="m19.07 10.93-4.24 4.24"/><path d="M22 22 18 18"/><path d="M2 22 6 18"/><circle cx="12" cy="18" r="4"/></svg>
+        </div>
+        <h4>Creative Thinkers</h4>
+        <p>Visionaries who challenge convention and imagine impossible visual experiences.</p>
+      </div>
+
+      <div class="quality-card">
+        <div class="quality-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M12 12 2.1 12a10 10 0 0 0 9.9 10V12z"/><path d="M12 12 12 2.1a10 10 0 0 1 10 9.9H12z"/></svg>
+        </div>
+        <h4>AI Innovators</h4>
+        <p>Pioneers experimenting with generative models, LoRAs, and neural pipelines.</p>
+      </div>
+
+      <div class="quality-card">
+        <div class="quality-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h4>Builders &amp; Engineers</h4>
+        <p>Problem solvers crafting robust, scalable code and high-performance workflows.</p>
+      </div>
+
+      <div class="quality-card">
+        <div class="quality-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/><path d="m14.83 14.83 4.24 4.24"/><path d="m9.17 14.83-4.24 4.24"/></svg>
+        </div>
+        <h4>Designers &amp; Storytellers</h4>
+        <p>Artists who blend aesthetics, emotion, and narrative depth in digital media.</p>
+      </div>
+
+      <div class="quality-card">
+        <div class="quality-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h4>Problem Solvers</h4>
+        <p>Analytical minds turning complex technical challenges into simple, elegant solutions.</p>
+      </div>
+
+      <div class="quality-card">
+        <div class="quality-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <h4>Lifelong Learners</h4>
+        <p>Curious minds dedicated to continuous growth and pushing creative limits.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Future Opportunities Section -->
+  <section class="section-pad wrap" id="future-opportunities">
+    <div class="section-head reveal in" style="margin-bottom: 48px;">
+      <span class="mono">UPCOMING ROLES</span>
+      <h2>Future Opportunities.</h2>
+      <p>Explore the specialized roles we plan to introduce as Apex GenAI Media Solutions expands.</p>
+    </div>
+
+    <div class="jobs-grid reveal in">
+      <!-- 1 -->
+      <div class="job-card">
+        <div class="job-header">
+          <span class="mono job-category">ENGINEERING</span>
+          <h3 class="job-title">AI Engineer</h3>
+        </div>
+        <p class="job-description">Train customized diffusion models, optimize GPU inference pipelines, and implement temporal animation vectors.</p>
+        <div class="coming-soon-badge"><span class="badge-dot"></span> Coming Soon</div>
+      </div>
+
+      <!-- 2 -->
+      <div class="job-card">
+        <div class="job-header">
+          <span class="mono job-category">DEVELOPMENT</span>
+          <h3 class="job-title">Full Stack Developer</h3>
+        </div>
+        <p class="job-description">Build interactive web applications, real-time creative dashboards, and high-performance API integrations.</p>
+        <div class="coming-soon-badge"><span class="badge-dot"></span> Coming Soon</div>
+      </div>
+
+      <!-- 3 -->
+      <div class="job-card">
+        <div class="job-header">
+          <span class="mono job-category">CREATIVE TECH</span>
+          <h3 class="job-title">Creative Technologist</h3>
+        </div>
+        <p class="job-description">Bridge synthetic AI rendering with 3D animation, VFX plates, and interactive media installations.</p>
+        <div class="coming-soon-badge"><span class="badge-dot"></span> Coming Soon</div>
+      </div>
+
+      <!-- 4 -->
+      <div class="job-card">
+        <div class="job-header">
+          <span class="mono job-category">DESIGN</span>
+          <h3 class="job-title">UI/UX Designer</h3>
+        </div>
+        <p class="job-description">Design state-of-the-art user interfaces, micro-interactions, and design systems for luxury media platforms.</p>
+        <div class="coming-soon-badge"><span class="badge-dot"></span> Coming Soon</div>
+      </div>
+
+      <!-- 5 -->
+      <div class="job-card">
+        <div class="job-header">
+          <span class="mono job-category">MOTION &amp; VFX</span>
+          <h3 class="job-title">Motion Designer</h3>
+        </div>
+        <p class="job-description">Craft cinematic video reels, kinetic typography, atmospheric visual effects, and trailer compositions.</p>
+        <div class="coming-soon-badge"><span class="badge-dot"></span> Coming Soon</div>
+      </div>
+
+      <!-- 6 -->
+      <div class="job-card">
+        <div class="job-header">
+          <span class="mono job-category">AI CREATIVE</span>
+          <h3 class="job-title">AI Content Creator</h3>
+        </div>
+        <p class="job-description">Generate cutting-edge synthetic artwork, prompt engineering workflows, and viral brand media content.</p>
+        <div class="coming-soon-badge"><span class="badge-dot"></span> Coming Soon</div>
+      </div>
+
+      <!-- 7 -->
+      <div class="job-card">
+        <div class="job-header">
+          <span class="mono job-category">AUTOMATION</span>
+          <h3 class="job-title">AI Automation Specialist</h3>
+        </div>
+        <p class="job-description">Connect database triggers, custom AI agents, and programmatic content distribution pipelines.</p>
+        <div class="coming-soon-badge"><span class="badge-dot"></span> Coming Soon</div>
+      </div>
+
+      <!-- 8 -->
+      <div class="job-card">
+        <div class="job-header">
+          <span class="mono job-category">RESEARCH</span>
+          <h3 class="job-title">Prompt Engineer</h3>
+        </div>
+        <p class="job-description">Fine-tune model prompts, control vectors, visual LoRAs, and multi-modal generation parameters.</p>
+        <div class="coming-soon-badge"><span class="badge-dot"></span> Coming Soon</div>
+      </div>
+
+      <!-- 9 -->
+      <div class="job-card">
+        <div class="job-header">
+          <span class="mono job-category">BRANDING</span>
+          <h3 class="job-title">Brand Strategist</h3>
+        </div>
+        <p class="job-description">Formulate high-level visual art direction, brand positioning, and commercial market strategy.</p>
+        <div class="coming-soon-badge"><span class="badge-dot"></span> Coming Soon</div>
+      </div>
+
+      <!-- 10 -->
+      <div class="job-card">
+        <div class="job-header">
+          <span class="mono job-category">MARKETING</span>
+          <h3 class="job-title">Marketing Specialist</h3>
+        </div>
+        <p class="job-description">Architect multi-channel growth campaigns, paid ad operations, conversion velocity, and analytics.</p>
+        <div class="coming-soon-badge"><span class="badge-dot"></span> Coming Soon</div>
+      </div>
+
+      <!-- 11 -->
+      <div class="job-card">
+        <div class="job-header">
+          <span class="mono job-category">BUSINESS</span>
+          <h3 class="job-title">Business Development</h3>
+        </div>
+        <p class="job-description">Expand enterprise brand partnerships, pitch commercial AI media solutions, and close studio deals.</p>
+        <div class="coming-soon-badge"><span class="badge-dot"></span> Coming Soon</div>
+      </div>
+
+      <!-- 12 -->
+      <div class="job-card">
+        <div class="job-header">
+          <span class="mono job-category">INTERNSHIPS</span>
+          <h3 class="job-title">Creative Internships</h3>
+        </div>
+        <p class="job-description">Mentor emerging creative talent in generative AI filmmaking, digital art, and production pipelines.</p>
+        <div class="coming-soon-badge"><span class="badge-dot"></span> Coming Soon</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Why Join Apex Section -->
+  <section class="section-pad wrap">
+    <div class="section-head reveal in" style="text-align:center; margin:0 auto 48px;">
+      <span class="mono">ADVANTAGES &amp; GROWTH</span>
+      <h2>Why Join Apex.</h2>
+    </div>
+
+    <div class="why-join-grid reveal in">
+      <div class="why-card">
+        <div class="why-number">01</div>
+        <h4>Work with Cutting-Edge AI</h4>
+        <p>Access state-of-the-art generative tools, custom LoRA model architectures, and GPU rendering clusters.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-number">02</div>
+        <h4>Solve Real-World Creative Challenges</h4>
+        <p>Deliver high-impact cinematic campaigns and performance media for world-class luxury and tech brands.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-number">03</div>
+        <h4>Learn in a Fast-Growing Startup</h4>
+        <p>Accelerate your career trajectory in a fast-paced environment with rapid growth potential and zero red tape.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-number">04</div>
+        <h4>Build Products with Global Impact</h4>
+        <p>Reach millions of viewers globally with next-generation digital media and groundbreaking visual experiences.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-number">05</div>
+        <h4>Freedom to Innovate</h4>
+        <p>Experiment boldly, test ambitious ideas, pitch radical creative concepts, and shape our production stack.</p>
+      </div>
+
+      <div class="why-card">
+        <div class="why-number">06</div>
+        <h4>Collaborative Culture</h4>
+        <p>Work alongside passionate creators, engineers, filmmakers, and visionaries aligned on redefining media.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Culture Section -->
+  <section class="section-pad wrap">
+    <div class="culture-banner-card reveal in">
+      <div class="culture-glow"></div>
+      <div class="culture-content">
+        <span class="mono culture-tag">OUR HIRING CREO</span>
+        <h2 class="culture-statement">
+          "We don't hire to fill positions. We hire to build the future."
+        </h2>
+        <div class="manifesto-tagline-pills" style="justify-content: center; margin-top: 16px;">
+          <span class="pill">Imagine Fearlessly.</span>
+          <span class="pill">Build Intelligently.</span>
+          <span class="pill">Create Without Limits.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Stay Connected Banner -->
+  <section class="section-pad wrap" style="padding-bottom: 120px;">
+    <div class="cta-banner-card reveal in">
+      <h2 class="cta-banner-heading">Want to Be Part of Our Journey?</h2>
+      <p class="cta-banner-text">
+        Hiring will begin as we expand. If Apex's vision inspires you, stay connected and be among the first to know when new opportunities become available.
+      </p>
+      <div class="cta-banner-actions">
+        <a href="index.html#contact" class="btn btn-primary magnetic">Contact Us</a>
+        <a href="https://www.linkedin.com/in/ansh-bhanushali-3971ab373?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" class="btn btn-ghost magnetic">Follow Our Journey</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer-section">
+  <!-- Background Glow Watermark -->
+  <h1 class="footer-watermark apex-watermark">APEX GENAI</h1>
+
+  <div class="footer-container">
+    
+    <!-- Top Row: Brand Info + Links Grid -->
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="assets/images/Apexlogo.jpeg" alt="Apex GenAI Logo" class="footer-logo site-logo-img" onerror="this.onerror=null; this.src='assests/images/Apexlogo.jpeg';" /></a>
+        <p class="footer-tagline">
+          Cinematic AI production and performance marketing, under one studio.
+        </p>
+      </div>
+
+      <!-- Aligned Navigation Columns -->
+      <div class="footer-nav-grid">
+        <div class="footer-col">
+          <h4>COMPANY</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="careers.html" class="active">Careers</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/d/dz55-h6t-h4p'});return false;">Join Our Talent Network</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>SERVICES</h4>
+          <ul>
+            <li><a href="index.html#studios-expanded">Apex Studios</a></li>
+            <li><a href="index.html#media-expanded">Apex Media</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>RESOURCES</h4>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Row: Copyright -->
+    <div class="footer-bottom">
+      <p>© 2026 Apex GenAI Media Solutions. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

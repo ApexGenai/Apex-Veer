@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Apex GenAI Media Solutions</title>
+<meta name="description" content="Learn about Apex GenAI Media Solutions: fusing AI creativity and technology to craft intelligent experiences and redefine digital media.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="cursor-core" id="cursorCore"></div>
+
+<header id="siteHeader">
+  <a href="index.html" class="logo"><img src="assets/images/Apexlogo.jpeg" alt="Apex GenAI Logo" class="site-logo-img" onerror="this.onerror=null; this.src='assests/images/Apexlogo.jpeg';"></a>
+  <nav>
+    <ul class="navlinks">
+      <li><a href="index.html#studios-expanded">Studios</a></li>
+      <li><a href="index.html#media-expanded">Media</a></li>
+      <li><a href="index.html#founders">Founders</a></li>
+      <li style="display:flex; align-items:center;">
+        <button id="themeToggleBtn" class="theme-toggle-btn magnetic" onclick="toggleDisplayMode()" aria-label="Toggle Display Mode">
+          <span class="mode-label active-noir" id="modeNoir">NOIR</span>
+          <span class="mode-slash">/</span>
+          <span class="mode-label" id="modeCanvas">CANVAS</span>
+        </button>
+      </li>
+      <li><a href="index.html#contact" class="btn btn-primary magnetic">Start Project</a></li>
+    </ul>
+  </nav>
+  <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Menu" onclick="toggleMobileMenu()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+</header>
+
+<!-- Desktop Fixed Social Navigation -->
+<nav class="desktop-social-nav" aria-label="Social Media Links">
+  <a href="https://www.linkedin.com/in/ansh-bhanushali-3971ab373?utm_source=share_via&utm_content=profile&utm_medium=member_ios" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="social-nav-link" 
+     aria-label="Visit our LinkedIn profile">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-nav-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+  </a>
+  <a href="https://www.instagram.com/apexxmedia._?utm_source=qr" 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="social-nav-link" 
+     aria-label="Visit our Instagram profile">
+    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="social-nav-icon"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+  </a>
+</nav>
+
+<div class="mobile-menu-overlay" id="mobileMenuOverlay">
+  <ul class="mobile-menu-links">
+    <li><a href="about.html" onclick="closeMobileMenu()">About Us</a></li>
+    <li><a href="careers.html" onclick="closeMobileMenu()">Careers</a></li>
+    <li><a href="index.html#studios-expanded" onclick="closeMobileMenu()">Studios</a></li>
+    <li><a href="index.html#media-expanded" onclick="closeMobileMenu()">Media</a></li>
+    <li><a href="index.html#founders" onclick="closeMobileMenu()">Founders</a></li>
+    <li><a href="index.html#contact" onclick="closeMobileMenu()">Contact</a></li>
+  </ul>
+  
+  <div class="mobile-theme-row">
+    <span class="theme-label">DISPLAY MODE</span>
+    <button id="mobileThemeToggleBtn" class="theme-toggle-btn magnetic" onclick="toggleDisplayMode()" aria-label="Toggle Display Mode">
+      <span class="mode-label active-noir" id="mobileModeNoir">NOIR</span>
+      <span class="mode-slash">/</span>
+      <span class="mode-label" id="mobileModeCanvas">CANVAS</span>
+    </button>
+  </div>
+  
+  <div class="mobile-menu-bottom">
+    <a href="index.html#contact" class="btn btn-primary mobile-cta-btn" onclick="closeMobileMenu()">Start Project</a>
+    <div class="mobile-social-row" aria-label="Social Media Links">
+      <a href="https://www.linkedin.com/in/ansh-bhanushali-3971ab373?utm_source=share_via&utm_content=profile&utm_medium=member_ios" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="mobile-social-icon-btn" 
+         aria-label="Visit our LinkedIn profile">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-social-icon"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+      </a>
+      <a href="https://www.instagram.com/apexxmedia._?utm_source=qr" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="mobile-social-icon-btn" 
+         aria-label="Visit our Instagram profile">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mobile-social-icon"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<main class="about-page-wrapper">
+  <!-- Hero / Introduction Section -->
+  <section class="about-hero-section section-pad wrap">
+    <div class="about-hero-header reveal in">
+      <span class="mono about-tag">01 // WHO WE ARE</span>
+      <h1 class="about-main-heading">
+        At Apex GenAI Media Solutions, imagination is where everything begins.
+      </h1>
+      <p class="about-hero-lead">
+        We blend Artificial Intelligence, creativity, and technology to craft intelligent experiences, cinematic content, and next-generation digital solutions. Every project starts with a bold idea and ends with something unforgettable.
+      </p>
+    </div>
+
+    <!-- Philosophy Manifesto Box -->
+    <div class="about-manifesto-card reveal in">
+      <div class="manifesto-glow"></div>
+      <div class="manifesto-content">
+        <span class="mono manifesto-badge">OUR CREATIVE CORE</span>
+        <blockquote class="manifesto-quote">
+          "We don't see AI as replacing creativity—we see it as amplifying it."
+        </blockquote>
+        <div class="manifesto-tagline-pills">
+          <span class="pill">Imagine Fearlessly.</span>
+          <span class="pill">Build Intelligently.</span>
+          <span class="pill">Create Without Limits.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission and Vision Grid -->
+    <div class="about-grid-section">
+      <div class="section-head reveal in" style="margin-bottom: 40px;">
+        <span class="mono">PURPOSE &amp; FUTURE DIRECTION</span>
+        <h2>Mission &amp; Vision.</h2>
+      </div>
+
+      <div class="about-card-grid reveal in">
+        <!-- Card 1: Our Mission -->
+        <div class="about-card mission-card">
+          <div class="card-icon-header">
+            <span class="mono card-num">01</span>
+            <div class="card-badge-dot"></div>
+          </div>
+          <h3 class="card-title">Our Mission</h3>
+          <p class="card-description">
+            To transform bold ideas into intelligent experiences that inspire, engage, and shape the future.
+          </p>
+        </div>
+
+        <!-- Card 2: Our Vision -->
+        <div class="about-card vision-card">
+          <div class="card-icon-header">
+            <span class="mono card-num">02</span>
+            <div class="card-badge-dot"></div>
+          </div>
+          <h3 class="card-title">Our Vision</h3>
+          <p class="card-description">
+            To redefine the future of media by making imagination limitless through AI.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer-section">
+  <!-- Background Glow Watermark -->
+  <h1 class="footer-watermark apex-watermark">APEX GENAI</h1>
+
+  <div class="footer-container">
+    
+    <!-- Top Row: Brand Info + Links Grid -->
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="assets/images/Apexlogo.jpeg" alt="Apex GenAI Logo" class="footer-logo site-logo-img" onerror="this.onerror=null; this.src='assests/images/Apexlogo.jpeg';" /></a>
+        <p class="footer-tagline">
+          Cinematic AI production and performance marketing, under one studio.
+        </p>
+      </div>
+
+      <!-- Aligned Navigation Columns -->
+      <div class="footer-nav-grid">
+        <div class="footer-col">
+          <h4>COMPANY</h4>
+          <ul>
+            <li><a href="about.html" class="active">About Us</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>SERVICES</h4>
+          <ul>
+            <li><a href="index.html#studios-expanded">Apex Studios</a></li>
+            <li><a href="index.html#media-expanded">Apex Media</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>RESOURCES</h4>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Row: Copyright -->
+    <div class="footer-bottom">
+      <p>© 2026 Apex GenAI Media Solutions. All rights reserved.</p>
+    </div>
+
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
